@@ -17,4 +17,4 @@ Actions tab -> "Generate images (free providers)" -> Run workflow -> set count -
 
 ## Free limits
 Cloudflare free plan: 10,000 Neurons/day (resets 00:00 UTC) = about 170 images at 1024x1024 / 4 steps.
-When it runs out, the script switches to Pollinations automatically (anonymous: ~1 image every 15 s).
+When it runs out, the script switches to Pollinations automatically (anonymous: 1 image every 45 s).

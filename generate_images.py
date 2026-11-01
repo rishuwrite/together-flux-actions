@@ -9,13 +9,14 @@ Env vars
   STEPS                      default 4 (FLUX schnell: 1-8)
   CLOUDFLARE_ACCOUNT_ID      } for cloudflare
   CLOUDFLARE_API_TOKEN       }
-  POLLINATIONS_API_KEY       optional (anonymous works but is slow: ~1 image / 15 s)
+  POLLINATIONS_API_KEY       optional (anonymous works but is slow: 1 image / 45 s)
   TOGETHER_API_KEY           optional (paid account needed)
 """
 import base64
 import json
 import os
 import random
+import re
 import sys
 import time
 import urllib.parse
@@ -83,6 +84,12 @@ def http(method, url, **kw):
 
         body = resp.text[:400]
         low = body.lower()
+        m = re.search(r"every\s+(\d+)\s*sec", low)
+        if m:  # e.g. Pollinations: "Free limit reached: 1 image every 45 sec"
+            wait = int(m.group(1)) + 2
+            print(f"    rate limited; waiting {wait}s (attempt {attempt}/{MAX_RETRIES})")
+            time.sleep(wait)
+            continue
         if resp.status_code == 402 or any(m in low for m in QUOTA_MARKERS):
             raise QuotaExhausted(f"HTTP {resp.status_code}: {body}")
         if resp.status_code in (401, 403):
@@ -107,7 +114,7 @@ def gen_cloudflare(prompt, seed):
     resp = http(
         "POST", url,
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        json={"prompt": prompt, "steps": STEPS, "seed": seed},
+        json={"prompt": prompt, "steps": STEPS},
     )
     if resp.headers.get("content-type", "").startswith("image/"):
         return resp.content
@@ -149,7 +156,7 @@ def gen_together(prompt, seed):
 GENERATORS = {"cloudflare": gen_cloudflare, "pollinations": gen_pollinations, "together": gen_together}
 MIN_INTERVAL = {
     "cloudflare": 0.3,
-    "pollinations": 3 if os.environ.get("POLLINATIONS_API_KEY") else 16,  # anonymous ~1 req / 15 s
+    "pollinations": 3 if os.environ.get("POLLINATIONS_API_KEY") else 46,  # anonymous: 1 image / 45 s
     "together": 6.5,
 }
 
@@ -201,10 +208,10 @@ def main():
                 break
             except QuotaExhausted as exc:
                 last_call[provider] = time.time()
-                print(f"    {provider} quota used up -> switching. ({str(exc)[:120]})")
+                print(f"    {provider} quota used up -> switching. ({str(exc)[:300]})")
                 active.remove(provider)
             except ProviderDisabled as exc:
-                print(f"    {provider} disabled -> switching. ({str(exc)[:120]})")
+                print(f"    {provider} disabled -> switching. ({str(exc)[:300]})")
                 active.remove(provider)
             except Exception as exc:
                 last_call[provider] = time.time()
