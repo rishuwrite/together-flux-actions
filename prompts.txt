@@ -1,0 +1,7 @@
+# One prompt per line. Lines starting with # are ignored.
+# Prompts are used in order and repeat if you ask for more images than prompts.
+a misty mountain village at sunrise, cinematic lighting, highly detailed
+a red vintage car parked on a rainy neon-lit street, photorealistic
+a bowl of fresh fruit on a wooden table, soft natural light, 35mm photo
+a futuristic city skyline at dusk, flying vehicles, concept art
+a cozy reading nook with a window and plants, warm light, interior photo

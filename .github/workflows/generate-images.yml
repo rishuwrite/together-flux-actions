@@ -1,0 +1,45 @@
+name: Generate images (Together FLUX schnell)
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Number of images to generate"
+        required: false
+        default: "50"
+  # Uncomment to run daily (cron is UTC). 02:30 UTC = 08:00 AM IST.
+  # schedule:
+  #   - cron: "30 2 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate images
+        env:
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          NUM_IMAGES: ${{ github.event.inputs.count || '50' }}
+        run: python generate_images.py
+
+      - name: Upload images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: images-${{ github.run_number }}
+          path: output/
+          retention-days: 7
+          if-no-files-found: ignore
