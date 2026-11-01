@@ -1,31 +1,20 @@
-# together-flux-actions
+# free-image-actions
 
-Generates images with **Together AI – FLUX.1 [schnell] Free** from a GitHub Action
-and uploads them as a downloadable artifact.
+Generates images from a GitHub Action using **Cloudflare Workers AI (FLUX.1 schnell)** first,
+then falls back to **Pollinations**, and optionally **Together AI** (paid).
 
-## Setup
+## Secrets (repo -> Settings -> Secrets and variables -> Actions -> New repository secret)
 
-1. **Get a Together AI key**: sign up at <https://api.together.ai>, then Settings → API Keys → create a key. No credit card needed for the free endpoint.
-2. **Add the secret in GitHub**: repo → Settings → Secrets and variables → Actions → *New repository secret*
-   - Name: `TOGETHER_API_KEY`
-   - Secret: your key
-3. **Run it**: repo → Actions → *Generate images (Together FLUX schnell)* → *Run workflow* (default 50 images).
-4. **Download**: open the finished run → *Artifacts* → `images-<run number>` (kept 7 days).
+| Secret | Required | Where to get it |
+|---|---|---|
+| `CLOUDFLARE_ACCOUNT_ID` | yes | dash.cloudflare.com -> AI -> Workers AI -> "Use REST API" |
+| `CLOUDFLARE_API_TOKEN`  | yes | same page -> "Create a Workers AI API Token" |
+| `POLLINATIONS_API_KEY`  | no  | enter.pollinations.ai (faster than anonymous) |
+| `TOGETHER_API_KEY`      | no  | api.together.ai (needs prepaid credits) |
 
-## Files
+## Run
+Actions tab -> "Generate images (free providers)" -> Run workflow -> set count -> download artifact `images-<n>` (kept 7 days).
 
-| File | Purpose |
-|---|---|
-| `generate_images.py` | Calls Together API, saves PNGs + `log.json` |
-| `prompts.txt` | Your prompts, one per line (optional) |
-| `.github/workflows/generate-images.yml` | The Action |
-
-## Settings (env vars in the workflow)
-
-`NUM_IMAGES` (50), `WIDTH`/`HEIGHT` (1024), `STEPS` (4), `SLEEP_SECONDS` (6.5), `MODEL`.
-
-## Notes
-
-- The free endpoint is limited to roughly 10 images/min, so 50 images take ~6 minutes.
-- If every request fails with 401/403 check the secret; 404 means the free model is no longer offered - set `MODEL` to a paid one such as `black-forest-labs/FLUX.1-schnell`.
-- Never commit your API key; only use Actions secrets.
+## Free limits
+Cloudflare free plan: 10,000 Neurons/day (resets 00:00 UTC) = about 170 images at 1024x1024 / 4 steps.
+When it runs out, the script switches to Pollinations automatically (anonymous: ~1 image every 15 s).

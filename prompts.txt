@@ -1,7 +1,120 @@
-# One prompt per line. Lines starting with # are ignored.
-# Prompts are used in order and repeat if you ask for more images than prompts.
+# Nature & landscapes
 a misty mountain village at sunrise, cinematic lighting, highly detailed
-a red vintage car parked on a rainy neon-lit street, photorealistic
+a calm turquoise lake surrounded by pine forest, morning fog, landscape photography
+a golden wheat field under a dramatic sunset sky, wide angle photo
+a waterfall in a lush green jungle, long exposure, ultra detailed
+a snow-covered Himalayan peak at dawn, pink clouds, 4k photo
+a quiet beach at sunset with gentle waves and footprints in the sand
+a field of lavender in full bloom with a small farmhouse, soft light
+an autumn forest path covered in orange leaves, warm sunlight rays
+a desert canyon at golden hour, red rock formations, photorealistic
+a lone tree on a hill under a starry night sky, milky way, long exposure
+a rainbow over a green valley after rain, vibrant colors
+a frozen lake with cracked ice patterns, blue tones, aerial view
+a tropical island with clear water seen from above, drone photo
+a bamboo forest with sunlight filtering through, peaceful mood
+a river winding through terraced rice fields, misty morning
+
+# Animals & wildlife
+a tiger resting in tall grass, golden hour, wildlife photography
+a majestic elephant walking at sunrise on the savanna, dust in the air
+a red fox in fresh snow looking at the camera, sharp focus
+a colorful parrot perched on a branch, macro photo, bokeh background
+a golden retriever puppy playing in a garden, sunny day, shallow depth of field
+a snow leopard on a rocky ridge, detailed fur, telephoto shot
+a pair of flamingos standing in shallow water at dawn, reflections
+a curious owl on a mossy branch at night, glowing eyes, forest background
+a peacock displaying its feathers, vivid colors, close-up
+a sleeping orange cat curled on a windowsill, soft morning light
+a school of tropical fish over a coral reef, underwater photography
+a monarch butterfly on a bright flower, macro, ultra sharp
+a horse galloping on a beach at sunset, motion blur, cinematic
+a baby deer in a meadow with morning dew, soft focus
+a lion resting under an acacia tree, warm tones, documentary style
+
+# Food & drink
 a bowl of fresh fruit on a wooden table, soft natural light, 35mm photo
+a steaming cup of masala chai with spices on a rustic table, cozy mood
+a plate of butter chicken with naan and rice, top-down food photography
+a stack of pancakes with berries and maple syrup, bright kitchen light
+a street food stall at night in an Indian market, vibrant colors, photorealistic
+a colorful bowl of salad with avocado and tomatoes, studio lighting
+a freshly baked loaf of bread on a linen cloth, rustic style
+a glass of iced coffee with cream swirls, condensation, macro shot
+a platter of sushi with soy sauce and wasabi, dark background, elegant
+a slice of chocolate cake with a strawberry on top, shallow depth of field
+a plate of crispy samosas with green chutney, warm light
+a pizza fresh out of a wood-fired oven, melted cheese, steam
+a bowl of ramen with egg and scallions, steam rising, moody lighting
+a cup of cappuccino with latte art on a marble table, top view
+a basket of fresh vegetables at a farmers market, natural light
+
+# Cities & architecture
+a red vintage car parked on a rainy neon-lit street, photorealistic
 a futuristic city skyline at dusk, flying vehicles, concept art
+a narrow cobblestone alley in an old European town, warm lanterns, evening
+a modern glass skyscraper reflecting the sunset, low angle photo
+a busy Indian railway station at dawn, golden light, travel photography
+a traditional Rajasthani haveli courtyard with colorful arches, sunny day
+a peaceful Japanese temple garden in autumn, red maple leaves
+a rainy night in a crowded city street with umbrellas, bokeh lights
+a charming small-town bookstore front with flowers, morning light
+a bridge over a river in fog, minimalist composition, muted colors
+an old lighthouse on a rocky coast during a storm, dramatic sky
+a white-washed Greek island village overlooking the sea, blue domes
+a night market with glowing lanterns and food stalls, vibrant atmosphere
+a cozy wooden cabin in a snowy forest, smoke from the chimney, warm window glow
+a long empty highway through the desert at sunset, cinematic wide shot
+
+# Interiors & objects
 a cozy reading nook with a window and plants, warm light, interior photo
+a minimalist living room with a beige sofa and large windows, Scandinavian style
+a vintage typewriter on a wooden desk with coffee and notebook, moody light
+a modern kitchen with marble countertops and hanging plants, bright and clean
+a bedroom with soft linen bedding and morning sunlight, calm aesthetic
+a home office desk setup with a laptop, plant and lamp, evening glow
+a shelf full of old books and a brass globe, warm tones
+a pair of white sneakers on a pastel background, product photography
+a wristwatch on a dark stone surface, macro, dramatic lighting
+a bouquet of fresh sunflowers in a glass vase, window light
+a perfume bottle with water droplets on a reflective surface, studio shot
+a candle burning beside a stack of books, cozy winter evening
+a ceramic teapot and cups on a tray, Japanese minimalist style
+a leather backpack on a wooden bench in a park, lifestyle photo
+a set of watercolor paints and brushes on a table, artistic flat lay
+
+# People & lifestyle (generic, no real persons)
+a young woman reading a book in a cafe window seat, soft natural light, candid photo
+a farmer walking through a green field at sunrise, silhouette, rural India
+a child flying a kite on a windy hill, joyful, golden hour
+an elderly man playing chess in a park, warm afternoon light, documentary style
+a group of friends laughing around a campfire at night, warm glow
+a chef plating a dish in a professional kitchen, dynamic shot
+a cyclist riding along a coastal road at sunrise, wide shot
+a student studying at a desk late at night with a desk lamp, cozy mood
+a traditional potter shaping clay on a wheel, close-up of hands
+a musician playing acoustic guitar on a rooftop at sunset, silhouette
+
+# Sci-fi, fantasy & concept art
+an astronaut walking on a colorful alien planet, wide shot, sci-fi illustration
+a glowing crystal cave with a calm underground lake, fantasy concept art
+a friendly robot watering plants in a greenhouse, soft pastel colors
+a floating island with waterfalls in the clouds, fantasy landscape, detailed
+a medieval stone castle on a cliff at dusk, dramatic clouds, matte painting
+a spaceship approaching a ringed planet, cinematic, deep space colors
+a dragon silhouette flying over snowy mountains at sunrise, epic fantasy art
+a cyberpunk street market in the rain, neon signs, highly detailed
+an enchanted forest with glowing mushrooms and fireflies, magical atmosphere
+a steampunk airship over a Victorian city at sunset, detailed illustration
+
+# Illustration, minimal & abstract
+a minimalist flat illustration of a mountain lake, pastel colors
+a cute watercolor illustration of a fox in a forest, soft edges
+an isometric illustration of a tiny cozy house with a garden, bright colors
+a geometric abstract pattern in teal and orange, clean vector style
+a vintage travel poster style illustration of a mountain train journey
+a paper-cut art landscape with layered hills and a sun, soft shadows
+a gradient abstract background in purple and pink, smooth waves, modern wallpaper
+a hand-drawn ink sketch of an old city street, detailed linework
+a cartoon-style hot air balloon floating above a colorful village, children's book art
+a macro photo of a water droplet on a green leaf, crystal clear, detailed reflections
